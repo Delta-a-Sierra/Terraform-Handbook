@@ -4,7 +4,7 @@ Project files created whilst following the Terraform-Handbook
 
 ## Chapters
 
-- Chapter 1 - Introducing Terraform
+- Chapter 2 - Introducing Terraform
 
 ## Usage
 
