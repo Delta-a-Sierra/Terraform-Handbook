@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 resource "aws_instance" "base" {
-  ami           = "ami-0d729a60"
-  instance_type = "t2.micro"
+  ami           = var.ami[var.region]
+  instance_type = var.instance_type
 }
 
 resource "aws_eip" "base" {
