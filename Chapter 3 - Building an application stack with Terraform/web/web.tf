@@ -27,8 +27,14 @@ resource "aws_instance" "web" {
   count                       = length(var.instance_ips)
   tags = {
     Name  = "web-${format("%03d", count.index)}"
-    Owner = element(var.owner_tag, count.index)
+    Owner = "Dwayne.Sutherland"
   }
+
+  volume_tags = {
+    Name  = "web-${format("%03d", count.index)}"
+    Owner = "Dwayne.Sutherland"
+  }
+  
 }
 
 resource "aws_elb" "web" {
