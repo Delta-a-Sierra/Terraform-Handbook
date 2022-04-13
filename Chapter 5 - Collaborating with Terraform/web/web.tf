@@ -5,6 +5,20 @@ terraform {
     region = "eu-west-2"
   }
 }
+data terraform_remote_state "consul" {
+  backend = "consul"
+  config = {
+    path         = "state/consul"
+    address= "ec2-54-83-174-200.compute-1.amazonaws.com:8500"
+    datacenter = "consul"
+  }
+}
+
+provider "consul" {
+  address    = "${data.terraform_remote_state.consul.outputs.
+  consul_server_address[0]}:8500"
+  datacenter = "consul"
+}
 
 provider "aws" {
   region = var.region
