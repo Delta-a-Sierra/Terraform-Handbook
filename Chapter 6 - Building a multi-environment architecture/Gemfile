@@ -1,0 +1,7 @@
+
+source 'https://rubygems.org/'
+ruby '2.6.8'
+
+gem 'test-kitchen'
+gem 'kitchen-terraform'
+gem 'inspec-bin'
